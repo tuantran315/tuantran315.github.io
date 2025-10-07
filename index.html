@@ -4,348 +4,100 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alexander Tran | Electronics Engineer & Adjunct Professor</title>
-  <meta name="description" content="Portfolio website of Alexander Tran — full‑time Electronics Engineer and part‑time Adjunct Professor of Electrical Engineering. Projects, teaching, publications, and contact." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0b0f14;         /* page background */
-      --card:#111824;       /* card background */
-      --muted:#a6b3c2;      /* secondary text */
-      --text:#e6edf3;       /* primary text */
-      --brand:#4cc9f0;      /* accent color */
-      --brand-2:#22c55e;    /* secondary accent */
-      --border:#1f2a37;     /* borders */
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 18px;
-      --radius-sm: 12px;
-      --maxw: 1120px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-      color:var(--text); background:linear-gradient(180deg, #081018 0%, #0b0f14 60%, #0b0f14 100%);
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-    }
-    a{color:var(--brand); text-decoration:none}
-    a:hover{opacity:.9}
-    .container{max-width:var(--maxw); margin-inline:auto; padding:0 24px}
-
-    /* Header */
-    header{position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background:rgba(8,16,24,.6); border-bottom:1px solid var(--border); z-index:50}
-    .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
-    .brand{display:flex; gap:12px; align-items:center}
-    .brand .logo{width:36px; height:36px; display:grid; place-items:center; background:linear-gradient(135deg, var(--brand), #8b5cf6); border-radius:10px; box-shadow:var(--shadow); font-weight:800}
-    .brand h1{font-size:16px; letter-spacing:.3px; margin:0}
-    nav ul{display:flex; gap:20px; list-style:none; padding:0; margin:0}
-    nav a{color:var(--muted); font-weight:600}
-    nav a:hover, nav a.active{color:var(--text)}
-
-    /* Hero */
-    .hero{padding:72px 0 36px}
-    .hero-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center}
-    .badge{display:inline-flex; gap:8px; align-items:center; padding:6px 10px; border:1px solid var(--border); border-radius:999px; color:var(--muted); font-size:12px}
-    .title{font-size:40px; line-height:1.1; margin:14px 0 12px}
-    .subtitle{color:var(--muted); max-width:68ch}
-    .cta{margin-top:22px; display:flex; gap:12px}
-    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; font-weight:700; border:1px solid var(--border); background:var(--card); color:var(--text)}
-    .btn.primary{background:linear-gradient(135deg, var(--brand), #8b5cf6); border-color:transparent}
-    .btn.secondary{background:#0f1520}
-    .hero-card{background:radial-gradient(1200px 500px at 20% -10%, rgba(76,201,240,.25), transparent), var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow)}
-    .hero-card .grid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
-    .metric{background:#0e1522; border:1px solid var(--border); padding:16px; border-radius:14px}
-    .metric b{font-size:20px}
-    .chip{display:inline-block; font-size:12px; padding:.3rem .6rem; border:1px solid var(--border); border-radius:999px; color:var(--muted)}
-
-    /* Section */
-    section{padding:48px 0}
-    .section-title{display:flex; align-items:center; gap:10px; margin-bottom:18px}
-    .section-title h2{margin:0; font-size:22px}
-    .section-sub{color:var(--muted); margin-bottom:24px}
-
-    /* Cards / grids */
-    .grid-3{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px}
-    .grid-2{display:grid; grid-template-columns:repeat(2, 1fr); gap:18px}
-    .card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:18px}
-    .card h3{margin:0 0 6px; font-size:18px}
-    .card p{color:var(--muted)}
-
-    /* Projects */
-    .project{display:flex; flex-direction:column; gap:10px}
-    .project .thumb{height:160px; border-radius:12px; background:linear-gradient(160deg, #0e1726, #0b1220); border:1px solid var(--border); display:grid; place-items:center; color:#9cc7ff; font-weight:700}
-    .tag{display:inline-block; font-size:12px; padding:.25rem .55rem; border:1px solid var(--border); border-radius:999px; color:var(--muted)}
-    .tags{display:flex; gap:8px; flex-wrap:wrap}
-
-    /* Teaching timeline */
-    .timeline{position:relative; padding-left:20px}
-    .timeline:before{content:""; position:absolute; left:8px; top:0; bottom:0; width:2px; background:#1a2431}
-    .tl-item{position:relative; margin:14px 0; padding-left:18px}
-    .tl-item:before{content:""; position:absolute; left:-2px; top:6px; width:10px; height:10px; background:var(--brand-2); border-radius:50%; box-shadow:0 0 0 3px #0b0f14}
-
-    /* Footer */
-    footer{padding:40px 0 60px; color:var(--muted); border-top:1px solid var(--border)}
-
-    /* Responsive */
-    @media (max-width:960px){
-      .hero-grid{grid-template-columns:1fr}
-      .grid-3{grid-template-columns:1fr}
-      .grid-2{grid-template-columns:1fr}
-      .title{font-size:34px}
-    }
+    body{margin:0;font-family:Inter,sans-serif;background:#0b0f14;color:#e6edf3}
+    .container{max-width:1100px;margin:auto;padding:0 20px}
+    header{padding:20px 0;text-align:center}
+    header img{width:220px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.4)}
+    header h1{margin:20px 0 10px;font-size:28px}
+    header p{color:#a6b3c2;font-size:16px}
+    nav ul{list-style:none;display:flex;justify-content:center;gap:20px;padding:0}
+    nav a{color:#a6b3c2;text-decoration:none;font-weight:600}
+    nav a:hover{color:#fff}
+    section{padding:50px 0;border-bottom:1px solid #1f2a37}
+    .section-title{font-size:22px;margin-bottom:16px}
+    .card{background:#111824;padding:20px;border-radius:12px;margin-bottom:20px}
+    footer{text-align:center;padding:30px 0;color:#a6b3c2;font-size:14px}
   </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Alexander Tran",
-    "jobTitle": "Electronics Engineer; Adjunct Professor of Electrical Engineering",
-    "url": "https://your-username.github.io/",
-    "sameAs": ["https://www.linkedin.com/in/your-linkedin", "https://github.com/your-username"],
-    "worksFor": {"@type": "Organization", "name": "Lockheed Martin Aeronautics"},
-    "affiliation": {"@type": "CollegeOrUniversity", "name": "Dallas College"}
-  }
-  </script>
 </head>
 <body>
-  <!-- Header -->
   <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">AT</div>
-        <h1>Alexander Tran</h1>
-      </div>
-      <nav aria-label="Primary">
-        <ul>
-          <li><a class="active" href="#top">Home</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#teaching">Teaching</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <img src="DSC02573-Edit-2.jpg" alt="Alexander Tran Portrait">
+    <h1>Alexander Tran</h1>
+    <p>Electronics Engineer · Adjunct Professor</p>
+    <nav>
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Hero -->
-  <main id="top" class="hero">
-    <div class="container hero-grid">
-      <section>
-        <span class="badge">Electronics Engineer · Adjunct Professor</span>
-        <h2 class="title">Bridging mission‑critical avionics with hands‑on engineering education.</h2>
-        <p class="subtitle">Full‑time Electronics Engineer (F‑35 CNI simulation & systems) and part‑time Adjunct Professor (ENG 2305 Electrical Circuits). I build reliable embedded and RF systems, data tooling for simulation, and practical curricula that turn theory into capability.</p>
-        <div class="cta">
-          <a class="btn primary" href="#contact">Contact</a>
-          <a class="btn secondary" href="assets/Alexander_Tran_Resume.pdf" download>Download CV</a>
-        </div>
-        <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap">
-          <span class="chip">Embedded Systems</span>
-          <span class="chip">RF / CNI</span>
-          <span class="chip">Python · C/C++</span>
-          <span class="chip">MATLAB · SPICE</span>
-          <span class="chip">Teaching & Curriculum</span>
-        </div>
-      </section>
-      <aside class="hero-card" aria-label="Quick facts">
-        <div class="grid">
-          <div class="metric">
-            <div>Years in Industry</div>
-            <b>7+ (Aero)</b>
-            <p class="muted">Modeling & Simulation · Data pipelines</p>
-          </div>
-          <div class="metric">
-            <div>Courses</div>
-            <b>ENG 2305</b>
-            <p class="muted">Electrical Circuits — Dallas College</p>
-          </div>
-          <div class="metric">
-            <div>Focus</div>
-            <b>F‑35 CNI</b>
-            <p class="muted">Comms · Navigation · Identification</p>
-          </div>
-          <div class="metric">
-            <div>Toolkit</div>
-            <b>Altium · MATLAB · Python</b>
-            <p class="muted">Git · VS Code · Lab</p>
-          </div>
-        </div>
-      </aside>
+  <section id="projects" class="container">
+    <h2 class="section-title">Selected Engineering Projects</h2>
+    <div class="card">
+      <h3>CNI Model MADL SPAR Corrections</h3>
+      <p><strong>Problem:</strong> Simulation anomaly impacting MADL link behavior.<br>
+         <strong>Method:</strong> Built parser & validation pipeline (Python) for hex → binary decoding and regression tests.<br>
+         <strong>Result:</strong> Resolved SPAR deltas; improved verification speed and reduced integration defects.</p>
     </div>
-  </main>
-
-  <!-- Projects -->
-  <section id="projects">
-    <div class="container">
-      <div class="section-title">
-        <h2>Selected Engineering Projects</h2>
-      </div>
-      <p class="section-sub">Curated work demonstrating reliability, repeatability, and impact. Each case follows a concise <em>Problem → Method → Result</em> format.</p>
-      <div class="grid-3">
-
-        <article class="card project">
-          <div class="thumb">F‑35 CNI Model · MADL SPAR Fix</div>
-          <h3>CNI Model MADL SPAR Corrections</h3>
-          <p><strong>Problem:</strong> Simulation anomaly impacting MADL link behavior in CNI model. <br>
-             <strong>Method:</strong> Built parser & validation pipeline (Python) for hex → binary decoding, auto‑filled TR2/TR3, and regression tests. <br>
-             <strong>Result:</strong> Resolved SPAR deltas; improved verification speed and reduced integration defects across CMOD baselines.</p>
-          <div class="tags">
-            <span class="tag">Python</span><span class="tag">Modeling & Simulation</span><span class="tag">Verification</span>
-          </div>
-        </article>
-
-        <article class="card project">
-          <div class="thumb">Embedded Tooling · Data Pipeline</div>
-          <h3>CNI Data Toolchain (CLI + CI/CD)</h3>
-          <p><strong>Problem:</strong> Manual log analysis slowed SPAR tracking. <br>
-             <strong>Method:</strong> Authored CLI (PyInstaller), GitLab CI pipeline, and structured outputs (.csv/.txt) for analysts; containerized with Docker for reproducibility. <br>
-             <strong>Result:</strong> Cut analysis cycle time from days to hours; standardized artifacts for CMS reviews.</p>
-          <div class="tags">
-            <span class="tag">Python</span><span class="tag">Docker</span><span class="tag">GitLab CI</span>
-          </div>
-        </article>
-
-        <article class="card project">
-          <div class="thumb">RF/Embedded · Lab</div>
-          <h3>Low‑Noise RF Front‑End Prototype</h3>
-          <p><strong>Problem:</strong> Achieve high SNR for comms chain under thermal stress. <br>
-             <strong>Method:</strong> PCB design & SPICE sweep, MATLAB link budget, and bench validation. <br>
-             <strong>Result:</strong> Met gain/noise targets with thermal margin; documented for classroom demo labs.</p>
-          <div class="tags">
-            <span class="tag">RF</span><span class="tag">SPICE</span><span class="tag">MATLAB</span>
-          </div>
-        </article>
-
-      </div>
+    <div class="card">
+      <h3>CNI Data Toolchain (CLI + CI/CD)</h3>
+      <p><strong>Problem:</strong> Manual log analysis slowed SPAR tracking.<br>
+         <strong>Method:</strong> Authored CLI (PyInstaller), GitLab CI pipeline, and containerized with Docker.<br>
+         <strong>Result:</strong> Cut analysis cycle time from days to hours; standardized artifacts for CMS reviews.</p>
+    </div>
+    <div class="card">
+      <h3>Antenna Characterization & Test Fixture</h3>
+      <p><strong>Problem:</strong> Needed repeatable antenna measurements for CNI verification.<br>
+         <strong>Method:</strong> Built a compact test fixture, VNA calibration routine, and scripted plots with Python.<br>
+         <strong>Result:</strong> Reliable S‑parameter baselines and faster comparison runs for integration reviews.</p>
     </div>
   </section>
 
-  <!-- Teaching -->
-  <section id="teaching">
-    <div class="container">
-      <div class="section-title">
-        <h2>Teaching</h2>
-      </div>
-      <div class="grid-2">
-        <div class="card">
-          <h3>ENG 2305 — Electrical Circuits (Adjunct)</h3>
-          <p>Outcome‑driven course aligning fundamental circuit theory with lab‑first examples from avionics and embedded systems. Labs emphasize measurement discipline, uncertainty, and traceability.</p>
-          <ul>
-            <li>Curriculum: DC/AC analysis, transient response, op‑amps, filters</li>
-            <li>Tools: SPICE, MATLAB, Python notebooks</li>
-            <li>Assessment: skills‑based rubrics; practical checkouts</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Mentorship & Materials</h3>
-          <div class="timeline">
-            <div class="tl-item"><b>Capstone advising:</b> embedded telemetry logger from concept → PCB → firmware → test.</div>
-            <div class="tl-item"><b>Lab kits:</b> low‑cost, student‑owned kits mapped to week‑by‑week outcomes.</div>
-            <div class="tl-item"><b>Open resources:</b> problem‑method‑result write‑ups for each exemplar project.</div>
-          </div>
-        </div>
-      </div>
+  <section id="teaching" class="container">
+    <h2 class="section-title">Teaching</h2>
+    <div class="card">
+      <h3>Electrical Engineering Courses — Manufacturing & Industrial Technology (MIT) Program</h3>
+      <p>Adjunct instruction focused on industry‑aligned skills for MIT students. Coursework connects foundational circuit theory with measurement discipline and production‑minded problem solving.</p>
+      <ul>
+        <li>Topics: DC/AC analysis, transients, op‑amps, filters, instrumentation.</li>
+        <li>Methods: Lab‑first demos, SPICE simulations, MATLAB/Python analysis.</li>
+        <li>Outcomes: Practical competency in troubleshooting, test plans, and quality mindset.</li>
+      </ul>
     </div>
   </section>
 
-  <!-- Experience -->
-  <section id="experience">
-    <div class="container">
-      <div class="section-title">
-        <h2>Experience</h2>
-      </div>
-      <div class="grid-2">
-        <div class="card">
-          <h3>Electronics Engineer — Lockheed Martin Aeronautics</h3>
-          <p class="muted">F‑35 CNI (Comms, Navigation & Identification) · Fort Worth, TX</p>
-          <ul>
-            <li>Modeling, verification, and SPAR tracking across CMOD baselines (CMS, CNI Model).</li>
-            <li>Python data tooling: parsers, validators, auto‑fill utilities (TR2/TR3), and report generation.</li>
-            <li>Process: Git, code review, CI, artifact retention, reproducible analysis.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Adjunct Professor — Dallas College</h3>
-          <p class="muted">ENG 2305 Electrical Circuits · 2025—present</p>
-          <ul>
-            <li>Develop and deliver labs integrating industry‑grade workflows (version control, test plans).</li>
-            <li>Bridge theory to application with avionics‑inspired problem sets and demos.</li>
-          </ul>
-        </div>
-      </div>
+  <section id="experience" class="container">
+    <h2 class="section-title">Experience</h2>
+    <div class="card">
+      <h3>Electronics Engineer — Lockheed Martin Aeronautics</h3>
+      <p>F‑35 CNI Modeling, Verification & SPAR tracking. Python data tooling, parsers, validators, and reproducible analysis workflows.</p>
+    </div>
+    <div class="card">
+      <h3>Adjunct Professor — Dallas College</h3>
+      <p>Teaching Electrical Engineering courses within the MIT program, emphasizing lab‑driven instruction and industry‑aligned outcomes.</p>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills">
-    <div class="container">
-      <div class="section-title">
-        <h2>Skills</h2>
-      </div>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Hardware</h3>
-          <p>Analog/digital circuits, RF front‑ends, PCB design, measurement & test.</p>
-        </div>
-        <div class="card">
-          <h3>Software & Tools</h3>
-          <p>Python, C/C++, MATLAB, SPICE, Git, GitLab CI, Docker, VS Code, Altium.</p>
-        </div>
-        <div class="card">
-          <h3>Methods</h3>
-          <p>Modeling & simulation, verification & validation, reliability analysis, DOE.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-title">
-        <h2>Contact</h2>
-      </div>
-      <div class="grid-2">
-        <div class="card">
-          <h3>Let’s collaborate</h3>
-          <p class="muted">Email: <a href="mailto:alex.tran.engineer@example.com">alex.tran.engineer@example.com</a><br>
-          LinkedIn: <a href="#" target="_blank" rel="noopener">linkedin.com/in/your‑linkedin</a><br>
-          GitHub: <a href="#" target="_blank" rel="noopener">github.com/your‑username</a></p>
-          <p>For course materials or speaking requests, please include dates, topic, and expected audience.</p>
-        </div>
-        <div class="card">
-          <form id="contactForm" onsubmit="handleSubmit(event)">
-            <label for="name">Name</label>
-            <input id="name" name="name" required style="width:100%; padding:10px; margin:6px 0 12px; border-radius:10px; border:1px solid var(--border); background:#0f1520; color:var(--text)">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required style="width:100%; padding:10px; margin:6px 0 12px; border-radius:10px; border:1px solid var(--border); background:#0f1520; color:var(--text)">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" required style="width:100%; padding:10px; margin:6px 0 14px; border-radius:10px; border:1px solid var(--border); background:#0f1520; color:var(--text)"></textarea>
-            <button class="btn primary" type="submit" style="width:100%; justify-content:center">Send Message</button>
-            <p id="formNote" class="muted" style="margin-top:10px; display:none">Thanks! This demo form doesn’t send emails on GitHub Pages. Replace with Netlify Forms, Formspree, or your API.</p>
-          </form>
-        </div>
-      </div>
+  <section id="contact" class="container">
+    <h2 class="section-title">Contact</h2>
+    <div class="card">
+      <p>Email: <a href="mailto:tuantran315@gmail.com">tuantran315@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/alexander-tran-81a2b3102/" target="_blank">linkedin.com/in/alexander-tran-81a2b3102</a></p>
+      <p>GitHub: <a href="https://tuantran315.github.io/" target="_blank">tuantran315.github.io</a></p>
     </div>
   </section>
 
   <footer>
-    <div class="container">
-      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
-        <div>© <span id="year"></span> Alexander Tran. All rights reserved.</div>
-        <div style="display:flex; gap:10px">
-          <a href="#top">Back to top ↑</a>
-        </div>
-      </div>
-    </div>
+    <p>© <span id="year"></span> Alexander Tran. All rights reserved.</p>
   </footer>
 
   <script>
-    const y = document.getElementById('year'); y.textContent = new Date().getFullYear();
-    function handleSubmit(e){
-      e.preventDefault();
-      document.getElementById('formNote').style.display='block';
-      e.target.reset();
-    }
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
