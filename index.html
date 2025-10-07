@@ -4,100 +4,229 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alexander Tran | Electronics Engineer & Adjunct Professor</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body{margin:0;font-family:Inter,sans-serif;background:#0b0f14;color:#e6edf3}
-    .container{max-width:1100px;margin:auto;padding:0 20px}
-    header{padding:20px 0;text-align:center}
-    header img{width:220px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.4)}
-    header h1{margin:20px 0 10px;font-size:28px}
-    header p{color:#a6b3c2;font-size:16px}
-    nav ul{list-style:none;display:flex;justify-content:center;gap:20px;padding:0}
-    nav a{color:#a6b3c2;text-decoration:none;font-weight:600}
-    nav a:hover{color:#fff}
-    section{padding:50px 0;border-bottom:1px solid #1f2a37}
-    .section-title{font-size:22px;margin-bottom:16px}
-    .card{background:#111824;padding:20px;border-radius:12px;margin-bottom:20px}
-    footer{text-align:center;padding:30px 0;color:#a6b3c2;font-size:14px}
+    :root{
+      --bg:#0b0f14; --bg2:#0e1622; --card:#0f1726; --muted:#9fb1c7; --text:#e6edf3; --brand:#4cc9f0; --brand2:#8b5cf6; --border:#1f2a37; --radius:18px; --shadow:0 12px 35px rgba(0,0,0,.4);
+      --max:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(80% 60% at 10% 0%,rgba(76,201,240,.08),transparent),radial-gradient(80% 60% at 90% 0%,rgba(139,92,246,.08),transparent),var(--bg); color:var(--text)}
+    a{color:var(--brand);text-decoration:none}
+    .container{max-width:var(--max);margin-inline:auto;padding:0 24px}
+
+    /* NAV */
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(8px);background:rgba(11,15,20,.7);border-bottom:1px solid var(--border);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .mark{width:40px;height:40px;border-radius:12px;background:conic-gradient(from 180deg,var(--brand),var(--brand2));display:grid;place-items:center;font-weight:800;box-shadow:var(--shadow)}
+    .logo span{font-weight:800;letter-spacing:.2px}
+    nav ul{list-style:none;display:flex;gap:22px;margin:0;padding:0}
+    nav a{color:var(--muted);font-weight:600}
+    nav a:hover, nav a.active{color:var(--text)}
+
+    /* HERO */
+    .hero{padding:56px 0 20px}
+    .hero-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:center}
+    .kicker{display:inline-flex;gap:10px;align-items:center;padding:6px 12px;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:12px}
+    .title{font-size:42px;line-height:1.06;margin:16px 0 12px}
+    .subtitle{color:var(--muted);max-width:70ch}
+    .cta{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;font-weight:700;border:1px solid var(--border);background:linear-gradient(135deg,#111a2a,#0f1525);color:var(--text)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2));border-color:transparent}
+
+    .portrait-card{position:relative;border-radius:22px;overflow:hidden;background:linear-gradient(160deg,#0e1726,#0a1220);border:1px solid var(--border);box-shadow:var(--shadow)}
+    .portrait{width:100%;height:520px;object-fit:cover;display:block;}
+    .portrait-overlay{position:absolute;inset:auto 14px 14px 14px;background:rgba(10,16,26,.55);backdrop-filter:blur(6px);border:1px solid var(--border);padding:10px 14px;border-radius:12px;display:flex;align-items:center;justify-content:space-between}
+    .portrait-overlay .pill{font-size:12px;color:var(--muted)}
+
+    /* METRICS */
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+    .metric{background:linear-gradient(180deg,#0f1828,#0c1322);border:1px solid var(--border);padding:16px;border-radius:14px}
+    .metric b{font-size:20px}
+
+    /* SECTIONS */
+    section{padding:48px 0}
+    .section-title{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+    .section-title h2{margin:0;font-size:24px}
+    .section-sub{color:var(--muted);margin-bottom:22px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .card{background:linear-gradient(180deg,#0f1828,#0c1322);border:1px solid var(--border);border-radius:16px;padding:18px}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .card p{color:var(--muted)}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .tag{font-size:12px;border:1px solid var(--border);border-radius:999px;padding:.25rem .55rem;color:var(--muted)}
+
+    footer{padding:38px 0 60px;border-top:1px solid var(--border);color:var(--muted)}
+
+    @media (max-width:980px){
+      .hero-wrap{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .title{font-size:34px}
+      .portrait{height:420px}
+      .metrics{grid-template-columns:1fr 1fr}
+    }
   </style>
 </head>
 <body>
+  <!-- NAV -->
   <header>
-    <img src="DSC02573-Edit-2.jpg" alt="Alexander Tran Portrait">
-    <h1>Alexander Tran</h1>
-    <p>Electronics Engineer · Adjunct Professor</p>
-    <nav>
-      <ul>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#teaching">Teaching</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="container nav">
+      <div class="logo">
+        <div class="mark">AT</div>
+        <span>Alexander Tran</span>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a class="active" href="#top">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#teaching">Teaching</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section id="projects" class="container">
-    <h2 class="section-title">Selected Engineering Projects</h2>
-    <div class="card">
-      <h3>CNI Model MADL SPAR Corrections</h3>
-      <p><strong>Problem:</strong> Simulation anomaly impacting MADL link behavior.<br>
-         <strong>Method:</strong> Built parser & validation pipeline (Python) for hex → binary decoding and regression tests.<br>
-         <strong>Result:</strong> Resolved SPAR deltas; improved verification speed and reduced integration defects.</p>
+  <!-- HERO -->
+  <main id="top" class="hero">
+    <div class="container hero-wrap">
+      <section>
+        <span class="kicker">Electronics Engineer · Adjunct Professor</span>
+        <h1 class="title">Modern avionics & RF realism brought to Electrical Engineering education.</h1>
+        <p class="subtitle">Full‑time Electronics Engineer (F‑35 CNI modeling & verification) and part‑time Adjunct Professor teaching Electrical Engineering courses for the Manufacturing & Industrial Technology (MIT) Program at Dallas College.</p>
+        <div class="cta">
+          <a class="btn primary" href="#contact">Contact</a>
+          <a class="btn" href="assets/Alexander_Tran_Resume.pdf" download>Download CV</a>
+        </div>
+        <div class="metrics">
+          <div class="metric"><div>Years in Industry</div><b>2+ (Aero)</b></div>
+          <div class="metric"><div>Courses</div><b>Electrical Engineering courses</b><p class="muted">Dallas College — MIT Program</p></div>
+          <div class="metric"><div>Toolkit</div><b>Python · Git · VS Code · Antenna</b><p class="muted">Lab · Measurement</p></div>
+        </div>
+      </section>
+      <aside class="portrait-card">
+        <!-- IMPORTANT: Place your image beside index.html or in /assets and update src below -->
+        <img class="portrait" src="DSC02573-Edit-2.jpg" alt="Portrait of Alexander Tran in graduation regalia" onerror="this.src='https://dummyimage.com/900x1200/0f1726/9fb1c7&text=Add+DSC02573-Edit-2.jpg+to+your+repo'" />
+        <div class="portrait-overlay">
+          <span class="pill">Portrait</span>
+          <span class="pill">Updated <span id="heroDate"></span></span>
+        </div>
+      </aside>
     </div>
-    <div class="card">
-      <h3>CNI Data Toolchain (CLI + CI/CD)</h3>
-      <p><strong>Problem:</strong> Manual log analysis slowed SPAR tracking.<br>
-         <strong>Method:</strong> Authored CLI (PyInstaller), GitLab CI pipeline, and containerized with Docker.<br>
-         <strong>Result:</strong> Cut analysis cycle time from days to hours; standardized artifacts for CMS reviews.</p>
-    </div>
-    <div class="card">
-      <h3>Antenna Characterization & Test Fixture</h3>
-      <p><strong>Problem:</strong> Needed repeatable antenna measurements for CNI verification.<br>
-         <strong>Method:</strong> Built a compact test fixture, VNA calibration routine, and scripted plots with Python.<br>
-         <strong>Result:</strong> Reliable S‑parameter baselines and faster comparison runs for integration reviews.</p>
+  </main>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-title"><h2>Selected Engineering Projects</h2></div>
+      <p class="section-sub">Work grounded in verification discipline and measurable outcomes. (<em>Problem → Method → Result</em>)</p>
+      <div class="grid-3">
+        <article class="card">
+          <h3>CNI Model MADL SPAR Corrections</h3>
+          <p><b>Problem:</b> Simulation anomaly impacting MADL behavior.<br>
+             <b>Method:</b> Python parser & validation pipeline for hex→binary, auto‑fill TR2/TR3, regression tests.<br>
+             <b>Result:</b> Resolved SPAR deltas; faster verification and fewer integration defects.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Modeling & Simulation</span><span class="tag">Verification</span></div>
+        </article>
+        <article class="card">
+          <h3>CNI Data Toolchain (CLI + CI/CD)</h3>
+          <p><b>Problem:</b> Manual log analysis slowed SPAR tracking.<br>
+             <b>Method:</b> CLI (PyInstaller), GitLab CI pipeline, containerized with Docker; structured .csv/.txt artifacts.<br>
+             <b>Result:</b> Cut analysis cycle time from days to hours; standardized outputs for CMS reviews.</p>
+          <div class="tags"><span class="tag">GitLab CI</span><span class="tag">Docker</span><span class="tag">CLI</span></div>
+        </article>
+        <article class="card">
+          <h3>Antenna Characterization & Test Fixture</h3>
+          <p><b>Problem:</b> Need repeatable antenna measurements for CNI verification.<br>
+             <b>Method:</b> Compact fixture, VNA calibration routine, Python capture/plots.<br>
+             <b>Result:</b> Reliable S‑parameter baselines; quicker comparison runs for integration reviews.</p>
+          <div class="tags"><span class="tag">Antenna</span><span class="tag">VNA</span><span class="tag">Lab</span></div>
+        </article>
+      </div>
     </div>
   </section>
 
-  <section id="teaching" class="container">
-    <h2 class="section-title">Teaching</h2>
-    <div class="card">
-      <h3>Electrical Engineering Courses — Manufacturing & Industrial Technology (MIT) Program</h3>
-      <p>Adjunct instruction focused on industry‑aligned skills for MIT students. Coursework connects foundational circuit theory with measurement discipline and production‑minded problem solving.</p>
-      <ul>
-        <li>Topics: DC/AC analysis, transients, op‑amps, filters, instrumentation.</li>
-        <li>Methods: Lab‑first demos, SPICE simulations, MATLAB/Python analysis.</li>
-        <li>Outcomes: Practical competency in troubleshooting, test plans, and quality mindset.</li>
-      </ul>
+  <!-- TEACHING -->
+  <section id="teaching">
+    <div class="container">
+      <div class="section-title"><h2>Teaching</h2></div>
+      <div class="card">
+        <h3>Electrical Engineering — Manufacturing & Industrial Technology (MIT) Program</h3>
+        <p>Industry‑aligned instruction that connects foundational circuits to production‑minded troubleshooting and measurement discipline.</p>
+        <ul>
+          <li>Topics: DC/AC analysis, transients, op‑amps, filters, instrumentation basics.</li>
+          <li>Methods: Lab‑first demos, SPICE sims, MATLAB/Python analysis, documentation habits.</li>
+          <li>Outcomes: Practical competency for MIT pathways—test plans, quality mindset, clear reporting.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <section id="experience" class="container">
-    <h2 class="section-title">Experience</h2>
-    <div class="card">
-      <h3>Electronics Engineer — Lockheed Martin Aeronautics</h3>
-      <p>F‑35 CNI Modeling, Verification & SPAR tracking. Python data tooling, parsers, validators, and reproducible analysis workflows.</p>
-    </div>
-    <div class="card">
-      <h3>Adjunct Professor — Dallas College</h3>
-      <p>Teaching Electrical Engineering courses within the MIT program, emphasizing lab‑driven instruction and industry‑aligned outcomes.</p>
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-title"><h2>Experience</h2></div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Electronics Engineer — Lockheed Martin Aeronautics</h3>
+          <p class="muted">F‑35 CNI · Fort Worth, TX</p>
+          <ul>
+            <li>Modeling, verification, and SPAR tracking across CMOD baselines (CMS, CNI Model).</li>
+            <li>Data tooling: parsers, validators, auto‑fill utilities, repeatable analysis pipelines.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Adjunct Professor — Dallas College</h3>
+          <p class="muted">Electrical Engineering courses · MIT Program</p>
+          <ul>
+            <li>Lab‑driven instruction; industry workflows (version control, test plans, reporting).</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="contact" class="container">
-    <h2 class="section-title">Contact</h2>
-    <div class="card">
-      <p>Email: <a href="mailto:tuantran315@gmail.com">tuantran315@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/alexander-tran-81a2b3102/" target="_blank">linkedin.com/in/alexander-tran-81a2b3102</a></p>
-      <p>GitHub: <a href="https://tuantran315.github.io/" target="_blank">tuantran315.github.io</a></p>
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-title"><h2>Contact</h2></div>
+      <div class="grid-2">
+        <div class="card">
+          <p>Email: <a href="mailto:tuantran315@gmail.com">tuantran315@gmail.com</a><br>
+             LinkedIn: <a href="https://www.linkedin.com/in/alexander-tran-81a2b3102/" target="_blank" rel="noopener">linkedin.com/in/alexander-tran-81a2b3102</a><br>
+             GitHub Pages: <a href="https://tuantran315.github.io/" target="_blank" rel="noopener">tuantran315.github.io</a></p>
+        </div>
+        <div class="card">
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <label for="name">Name</label>
+            <input id="name" name="name" required style="width:100%;padding:10px;margin:6px 0 12px;border-radius:10px;border:1px solid var(--border);background:#0f1525;color:var(--text)">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required style="width:100%;padding:10px;margin:6px 0 12px;border-radius:10px;border:1px solid var(--border);background:#0f1525;color:var(--text)">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required style="width:100%;padding:10px;margin:6px 0 14px;border-radius:10px;border:1px solid var(--border);background:#0f1525;color:var(--text)"></textarea>
+            <button class="btn primary" type="submit" style="width:100%;justify-content:center">Send Message</button>
+            <p id="formNote" class="muted" style="margin-top:10px;display:none">Note: On GitHub Pages, use Formspree/Netlify or your API to receive emails.</p>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 
   <footer>
-    <p>© <span id="year"></span> Alexander Tran. All rights reserved.</p>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="year"></span> Alexander Tran. All rights reserved.</div>
+      <a href="#top">Back to top ↑</a>
+    </div>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('heroDate').textContent = new Date().toLocaleDateString();
+    function handleSubmit(e){e.preventDefault();document.getElementById('formNote').style.display='block';e.target.reset();}
   </script>
 </body>
 </html>
