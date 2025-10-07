@@ -6,31 +6,34 @@
   <title>Alexander Tran | Electronics Engineer & Adjunct Professor</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#0b0f14;--bg2:#0e1622;--card:#0f1726;--muted:#9fb1c7;--text:#e6edf3;--brand:#4cc9f0;--brand2:#8b5cf6;--border:#1f2a37;--radius:18px;--shadow:0 12px 35px rgba(0,0,0,.4);--max:1200px;}
+    :root{
+      --bg:#f9fafb; --card:#ffffff; --muted:#555; --text:#222; --brand:#2563eb; --brand2:#16a34a; --border:#e2e8f0; --radius:16px; --shadow:0 6px 16px rgba(0,0,0,.1); --max:1200px;
+    }
     *{box-sizing:border-box}
     body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:var(--text)}
     a{color:var(--brand);text-decoration:none}
     .container{max-width:var(--max);margin:auto;padding:0 24px}
-    header{position:sticky;top:0;background:rgba(11,15,20,.7);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+    header{position:sticky;top:0;background:#fff;backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:50}
     .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-    .logo{display:flex;align-items:center;gap:10px}
-    .logo .mark{width:40px;height:40px;border-radius:12px;background:conic-gradient(from 180deg,var(--brand),var(--brand2));display:grid;place-items:center;font-weight:800}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--brand)}
+    .logo .mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:grid;place-items:center;font-weight:800;color:#fff;box-shadow:var(--shadow)}
     nav ul{list-style:none;display:flex;gap:20px;margin:0;padding:0}
     nav a{color:var(--muted);font-weight:600}
-    nav a:hover, nav a.active{color:var(--text)}
-    .hero{padding:56px 0 20px}
+    nav a:hover, nav a.active{color:var(--brand)}
+    .hero{padding:56px 0 20px;background:linear-gradient(135deg,#eff6ff,#ffffff)}
     .hero-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:center}
     .portrait-card{position:relative;border-radius:20px;overflow:hidden;background:var(--card);box-shadow:var(--shadow)}
     .portrait{width:100%;height:520px;object-fit:cover;display:block}
     .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
-    .metric{background:var(--card);border:1px solid var(--border);padding:16px;border-radius:14px}
-    .metric b{font-size:20px}
+    .metric{background:var(--card);border:1px solid var(--border);padding:16px;border-radius:14px;box-shadow:var(--shadow)}
+    .metric b{font-size:20px;color:var(--brand)}
     section{padding:48px 0}
-    .section-title{margin-bottom:18px;font-size:24px}
+    .section-title{margin-bottom:18px;font-size:24px;color:var(--brand)}
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;margin-bottom:18px}
-    .card h3{margin-top:0}
-    footer{padding:38px 0;text-align:center;border-top:1px solid var(--border);color:var(--muted)}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);margin-bottom:18px}
+    .card h3{margin-top:0;color:var(--brand2)}
+    .card p{color:var(--muted)}
+    footer{padding:38px 0;text-align:center;border-top:1px solid var(--border);color:var(--muted);background:#fff}
     @media(max-width:960px){.hero-wrap{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.portrait{height:420px}.metrics{grid-template-columns:1fr 1fr}}
   </style>
 </head>
@@ -40,6 +43,7 @@
       <div class="logo"><div class="mark">AT</div><span>Alexander Tran</span></div>
       <nav><ul>
         <li><a href="#experience" class="active">Experience</a></li>
+        <li><a href="#education">Education</a></li>
         <li><a href="#teaching">Teaching</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul></nav>
@@ -50,11 +54,12 @@
     <div class="container hero-wrap">
       <section>
         <h1>Alexander Tran</h1>
-        <p>Electronics Engineer · Adjunct Professor</p>
-        <p>Full‑time Electronics Engineer and part‑time Adjunct Professor.</p>
+        <p><strong>Electronics Engineer · Adjunct Professor</strong></p>
+        <p>Full‑time Electronics Engineer and part‑time Adjunct Professor at Dallas College.</p>
         <div class="metrics">
           <div class="metric"><div>Years in Industry</div><b>2+ (Aero)</b></div>
           <div class="metric"><div>Courses</div><b>Electrical Engineering courses</b><p class="muted">Dallas College — MIT Program</p></div>
+          <div class="metric"><div>Toolkit</div><b>Python · Git · VS Code · Antenna</b></div>
         </div>
       </section>
       <aside class="portrait-card">
@@ -81,8 +86,25 @@
         <h3>Adjunct Professor — Dallas College</h3>
         <p class="muted">Electrical Engineering courses · MIT Program</p>
         <ul>
-          <li>Lab‑driven instruction; industry workflows.</li>
+          <li>Lab‑driven instruction; industry workflows (version control, test plans, reporting).</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="card">
+        <h3>M.S. Systems Engineering — Southern Methodist University</h3>
+        <p class="muted">2023 – Present</p>
+        <p>Graduate studies focused on systems engineering management, reliability, and verification & validation practices.</p>
+      </div>
+      <div class="card">
+        <h3>B.S. Electrical Engineering — The University of Texas at Arlington</h3>
+        <p class="muted">Graduated 2022</p>
+        <p>Coursework and projects included embedded systems, RF/microwave engineering, and circuit analysis.</p>
       </div>
     </div>
   </section>
