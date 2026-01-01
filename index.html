@@ -3,207 +3,209 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Alexander Tran — Systems Engineer focused on Verification, Validation, and Accreditation (VV&A) and Adjunct Professor."/>
+  <meta name="description" content="Alexander Tran — Systems Engineer focused on Verification, Validation, and Accreditation (VV&A) and Adjunct Professor in Robotics & Automation." />
   <title>Alexander Tran | Systems Engineer (VV&A) & Adjunct Professor</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#f9fafb; --card:#ffffff; --muted:#555; --text:#222; --brand:#2563eb; --brand2:#16a34a; --border:#e2e8f0; --radius:16px; --shadow:0 6px 16px rgba(0,0,0,.1); --max:1200px;
+      --bg:#f9fafb; --card:#ffffff; --muted:#555; --text:#222;
+      --brand:#2563eb; --brand2:#16a34a; --border:#e2e8f0;
+      --radius:16px; --shadow:0 6px 16px rgba(0,0,0,.1);
+      --max:1200px;
     }
     *{box-sizing:border-box}
     body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:var(--text)}
     a{color:var(--brand);text-decoration:none}
+    ul{padding-left:18px}
     .container{max-width:var(--max);margin:auto;padding:0 24px}
-    header{position:sticky;top:0;background:#fff;backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:50}
+
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--border);z-index:50}
     .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
     .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--brand)}
     .logo .mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:grid;place-items:center;font-weight:800;color:#fff;box-shadow:var(--shadow)}
     nav ul{list-style:none;display:flex;gap:20px;margin:0;padding:0}
     nav a{color:var(--muted);font-weight:600}
-    nav a:hover, nav a.active{color:var(--brand)}
+    nav a:hover{color:var(--brand)}
 
     .hero{padding:56px 0 20px;background:linear-gradient(135deg,#eff6ff,#ffffff)}
     .hero-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:center}
-    .portrait-card{position:relative;border-radius:20px;overflow:hidden;background:var(--card);box-shadow:var(--shadow)}
-    .portrait{width:100%;height:680px;object-fit:cover;object-position:center 30%;display:block}
+
+    .portrait-card{border-radius:20px;overflow:hidden;background:var(--card);box-shadow:var(--shadow)}
+    .portrait{width:100%;height:680px;object-fit:cover;object-position:center 30%}
 
     .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
-    .metric{background:var(--card);border:1px solid var(--border);padding:16px;border-radius:14px;box-shadow:var(--shadow)}
+    .metric{background:var(--card);border:1px solid var(--border);padding:16px;border-radius:14px}
     .metric b{font-size:20px;color:var(--brand)}
 
     section{padding:48px 0}
     .section-title{margin-bottom:18px;font-size:24px;color:var(--brand)}
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+
     .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);margin-bottom:18px}
     .card h3{margin-top:0;color:var(--brand2)}
     .card p{color:var(--muted)}
 
-    /* Form styles */
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .form-control{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:#fff;color:var(--text);font:inherit}
-    textarea.form-control{resize:vertical;min-height:130px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;border-radius:12px;border:1px solid var(--border);background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;font-weight:700;cursor:pointer}
-
     footer{padding:38px 0;text-align:center;border-top:1px solid var(--border);color:var(--muted);background:#fff}
 
     @media(max-width:960px){
-      .hero-wrap{grid-template-columns:1fr}
-      .grid-2{grid-template-columns:1fr}
+      .hero-wrap,.grid-2{grid-template-columns:1fr}
       .portrait{height:520px}
       .metrics{grid-template-columns:1fr 1fr}
-      .form-grid{grid-template-columns:1fr}
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="container nav">
-      <div class="logo"><div class="mark">AT</div><span>Alexander Tran</span></div>
-      <nav><ul>
-        <li><a href="#experience" class="active">Experience</a></li>
+<header>
+  <div class="container nav">
+    <div class="logo">
+      <div class="mark">AT</div>
+      <span>Alexander Tran</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#teaching">Teaching</a></li>
         <li><a href="#contact">Contact</a></li>
-      </ul></nav>
-    </div>
-  </header>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <main id="top" class="hero">
-    <div class="container hero-wrap">
-      <section>
-        <h1>Alexander Tran</h1>
-        <p><strong>Systems Engineer (Verification · Validation · Accreditation) · Adjunct Professor</strong></p>
-        <p>
-          Full-time Systems Engineer focused on <strong>VV&amp;A</strong> (verification, validation, and accreditation)
-          for aerospace/defense systems, and part-time Adjunct Professor at Dallas College.
-        </p>
+<main class="hero">
+  <div class="container hero-wrap">
+    <section>
+      <h1>Alexander Tran</h1>
+      <p><strong>Systems Engineer (Verification · Validation · Accreditation) · Adjunct Professor</strong></p>
+      <p>
+        Systems Engineer supporting aerospace and defense programs with a focus on
+        <strong>verification, validation, traceability, and accreditation</strong>.
+        Adjunct Professor at Dallas College contributing to workforce development
+        in Robotics & Automation.
+      </p>
 
-        <div class="metrics">
-          <div class="metric"><div>Domain</div><b>Defense / Aerospace</b></div>
-          <div class="metric"><div>Focus</div><b>V&amp;V · Accreditation · Requirements</b></div>
-          <div class="metric"><div>Toolkit</div><b>Python · Git · DOORS · Test/Docs</b></div>
-        </div>
-      </section>
-      <aside class="portrait-card">
-        <img class="portrait" src="DSC02573-Edit-2.jpg" alt="Alexander Tran Portrait">
-      </aside>
-    </div>
-  </main>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="container">
-      <h2 class="section-title">Professional Experience</h2>
-
-      <div class="card">
-        <h3>Systems Engineer (VV&amp;A) — Lockheed Martin Aeronautics</h3>
-        <p class="muted">F-35 CNI / Simulation &amp; Systems · Fort Worth, TX</p>
-        <ul>
-          <li>Plan and execute <strong>verification &amp; validation</strong> activities to demonstrate system performance against stakeholder and technical requirements.</li>
-          <li>Develop and maintain <strong>test plans, procedures, and traceability</strong> (requirements → verification method → evidence) to support program audits and reviews.</li>
-          <li>Support <strong>accreditation</strong> efforts by assembling evidence packages (assumptions, limitations, configuration baselines, results) and briefing technical stakeholders.</li>
-          <li>Coordinate with cross-functional teams (systems, software, test, modeling/simulation) to resolve issues, track discrepancies, and close verification gaps.</li>
-          <li>Build lightweight <strong>Python automation</strong> to streamline evidence collection, reporting, and analysis where applicable.</li>
-        </ul>
+      <div class="metrics">
+        <div class="metric"><div>Industry</div><b>Aerospace / Defense</b></div>
+        <div class="metric"><div>Focus</div><b>V&amp;V · Accreditation</b></div>
+        <div class="metric"><div>Tools</div><b>Python · Git · DOORS</b></div>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>Adjunct Professor — Dallas College</h3>
-        <p class="muted">Engineering / Technical Lab Instruction · Richland Campus</p>
-        <ul>
-          <li>Facilitate hands-on lab sessions that build core circuit skills: safe measurement, structured troubleshooting, and clear documentation.</li>
-          <li>Create lab guides, rubrics, and checkouts that mirror real engineering habits: repeatable setup, verification steps, and concise reporting.</li>
-          <li>Coach students on practical instrumentation use (DMM, power supply, function generator, oscilloscope) and interpretation of results.</li>
-        </ul>
-      </div>
+    <aside class="portrait-card">
+      <img class="portrait" src="DSC02573-Edit-2.jpg" alt="Alexander Tran Portrait">
+    </aside>
+  </div>
+</main>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <h2 class="section-title">Professional Experience</h2>
+
+    <div class="card">
+      <h3>Systems Engineer (VV&amp;A) — Lockheed Martin Aeronautics</h3>
+      <p class="muted">F-35 Systems / Modeling &amp; Simulation · Fort Worth, TX</p>
+      <ul>
+        <li>Plan and execute verification and validation activities to demonstrate compliance with system and stakeholder requirements.</li>
+        <li>Develop test plans, procedures, and verification matrices to ensure end-to-end traceability.</li>
+        <li>Support accreditation efforts by assembling evidence packages including assumptions, limitations, configuration baselines, and results.</li>
+        <li>Coordinate across systems, software, modeling, and test teams to resolve discrepancies and close verification gaps.</li>
+        <li>Leverage Python automation to streamline data analysis, reporting, and documentation workflows.</li>
+      </ul>
     </div>
-  </section>
 
-  <!-- EDUCATION -->
-  <section id="education">
-    <div class="container">
-      <h2 class="section-title">Education</h2>
-      <div class="card">
-        <h3>M.S. Systems Engineering — Southern Methodist University</h3>
-        <p class="muted">2023 – Present</p>
-        <p>Graduate studies focused on systems engineering management, reliability, and verification &amp; validation practices.</p>
-      </div>
-      <div class="card">
-        <h3>B.S. Electrical Engineering — The University of Texas at Arlington</h3>
-        <p class="muted">Graduated 2022</p>
-        <p>Coursework and projects included embedded systems, RF/microwave engineering, and circuit analysis.</p>
-      </div>
+    <div class="card">
+      <h3>Adjunct Professor — Dallas College</h3>
+      <p class="muted">Robotics & Automation · Workforce & Technical Education</p>
+      <ul>
+        <li>Deliver hands-on lab instruction supporting robotics and automation coursework.</li>
+        <li>Emphasize measurement discipline, safe electrical practices, and structured troubleshooting.</li>
+        <li>Guide students in documenting results and validating system behavior.</li>
+      </ul>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- TEACHING -->
-  <section id="teaching">
-    <div class="container">
-      <h2 class="section-title">Teaching</h2>
-      <div class="card">
-        <h3>Adjunct Instruction (Lab-First)</h3>
-        <p>
-          I teach through <strong>hands-on labs</strong> and structured troubleshooting—helping students build confidence with circuits,
-          measurement, and technical communication.
-        </p>
-        <ul>
-          <li><strong>Emphasis:</strong> safety, repeatable setup, measurement discipline, and documentation.</li>
-          <li><strong>Typical labs:</strong> DC/AC fundamentals, Ohm’s law &amp; power, basic circuit building, interpreting scope/DMM readings, intro filters/op-amps (as applicable to the course).</li>
-          <li><strong>Student outcomes:</strong> diagnose issues methodically, record results clearly, and explain what the data proves.</li>
-        </ul>
-        <p class="muted">
-          (Course titles/topics vary by term—this section reflects my general lab approach rather than a specific program.)
-        </p>
-      </div>
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <h2 class="section-title">Education</h2>
+
+    <div class="card">
+      <h3>M.S. Systems Engineering — The University of Texas at Dallas</h3>
+      <p class="muted">2023 – Present</p>
+      <p>
+        Graduate studies focused on systems engineering lifecycle processes,
+        verification &amp; validation, reliability, and requirements management.
+      </p>
     </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact</h2>
-      <div class="grid-2">
-        <div class="card">
-          <h3>Message & Links</h3>
-          <p>Email: <a href="mailto:tuantran315@gmail.com">tuantran315@gmail.com</a><br>
-             LinkedIn: <a href="https://www.linkedin.com/in/alexander-tran-81a2b3102/" target="_blank" rel="noreferrer">linkedin.com/in/alexander-tran-81a2b3102</a><br>
-             GitHub Pages: <a href="https://tuantran315.github.io/" target="_blank" rel="noreferrer">tuantran315.github.io</a></p>
-          <p class="muted">Prefer email for course/speaking inquiries. Include topic, date, and audience size.</p>
-        </div>
-        <div class="card">
-          <h3>Send me a message</h3>
-          <form id="contactForm" onsubmit="handleSubmit(event)">
-            <div class="form-grid">
-              <div>
-                <label for="name">Name</label>
-                <input id="name" name="name" class="form-control" required>
-              </div>
-              <div>
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" class="form-control" required>
-              </div>
-            </div>
-            <div style="margin-top:12px">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" class="form-control" required></textarea>
-            </div>
-            <div style="margin-top:14px">
-              <button class="btn" type="submit">Send Message</button>
-              <span id="formNote" class="muted" style="margin-left:10px;display:none">Thanks! On GitHub Pages, connect Formspree/Netlify to receive emails.</span>
-            </div>
-          </form>
-        </div>
-      </div>
+    <div class="card">
+      <h3>B.S. Electrical Engineering — The University of Texas at Arlington</h3>
+      <p class="muted">Graduated 2022</p>
+      <p>
+        Foundation in circuit analysis, electronics, embedded systems, and engineering
+        principles supporting automation and control systems.
+      </p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <p>© <span id="year"></span> Alexander Tran. All rights reserved.</p>
-  </footer>
+<!-- TEACHING -->
+<section id="teaching">
+  <div class="container">
+    <h2 class="section-title">Teaching</h2>
 
-  <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
-    function handleSubmit(e){e.preventDefault();document.getElementById('formNote').style.display='inline';e.target.reset();}
-  </script>
+    <div class="card">
+      <h3>Robotics & Automation — Dallas College</h3>
+      <p class="muted">Adjunct Professor · Applied Technology Programs</p>
+
+      <p>
+        I support the <strong>Robotics & Automation program</strong> by delivering
+        lab-based instruction that connects electrical fundamentals to real-world
+        automation and industrial systems.
+      </p>
+
+      <ul>
+        <li><strong>Instructional focus:</strong> electrical fundamentals, system behavior, and safe operation within automated environments.</li>
+        <li><strong>Lab activities:</strong> circuit assembly, measurement and verification, sensors and actuators, basic control concepts, and troubleshooting.</li>
+        <li><strong>Tools & methods:</strong> multimeters, oscilloscopes, power supplies, wiring standards, and repeatable test procedures.</li>
+        <li><strong>Industry mindset:</strong> emphasis on verification steps, clear documentation, configuration awareness, and disciplined problem solving.</li>
+      </ul>
+
+      <p class="muted">
+        Instruction aligns with workforce preparation for roles in industrial automation,
+        robotics support, and technical operations.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <div class="card">
+      <p>
+        📧 <a href="mailto:tuantran315@gmail.com">tuantran315@gmail.com</a><br>
+        🔗 <a href="https://www.linkedin.com/in/alexander-tran-81a2b3102/" target="_blank" rel="noreferrer">LinkedIn</a><br>
+        🌐 <a href="https://tuantran315.github.io/" target="_blank" rel="noreferrer">GitHub Pages</a>
+      </p>
+      <p class="muted">For academic or speaking inquiries, please include topic, date, and audience.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© <span id="year"></span> Alexander Tran</p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
